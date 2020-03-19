@@ -1,0 +1,130 @@
+body {
+	background-color: blanchedalmond;
+}
+
+/* 聊天框div */
+.chat {
+	width: 1600px;
+	margin: 20px auto;
+	margin-bottom: 180px;
+}
+
+.chat>ul {
+	list-style: none;
+	/* 去掉列表前的序号 */
+	padding: 0 80px;
+	/* 内边距 */
+	overflow: hidden;
+}
+
+.chat li[role='me'] {
+	background-color: brown;
+	float: right;
+}
+
+.chat li[role='bot'] {
+	background-color: cornflowerblue;
+	float: left;
+}
+
+/* 后代选择器 */
+.chat li {
+	position: relative;
+	color: #F0F8FF;
+	padding: 10px 15px;
+	margin: 10px 10px;
+	border-radius: 18px;
+	clear: both;
+}
+
+/* 伪元素 */
+.chat li::before {
+	content: '';
+	position: absolute;
+	top: -5px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+
+.chat li[role='me']::before {
+	right: -60px;
+	background: url(../img/jze.png);
+	background-size: cover;
+}
+
+.chat li[role='bot']::before {
+	left: -60px;
+	background: url(../img/bot.jpg);
+}
+
+/* 发送框div */
+.send {
+	height: 100px;
+	width: 500px;
+	line-height: 100px;
+	/* 垂直方向行高 */
+	text-align: center;
+	/* 水平方向居中 */
+	position: fixed;
+	/* 固定定位(会脱标) */
+	bottom: 50px;
+	left: 50%;
+	/* (边框)左相对页面的偏移量，前提是设置绝对位置 */
+	margin-left: -250px;
+	/* 边框左边外边距 */
+}
+
+.send>input {
+	width: 280px;
+	height: 35px;
+	border-radius: 30px;
+	outline: none;
+	border: 0;
+	padding: 5px 10px;
+
+}
+
+.send>button {
+	width: 3.75rem;
+	height: 30px;
+	border-radius: 15px;
+	outline: none;
+	border: 0;
+	cursor: pointer;
+	background-color: brown;
+	color: aliceblue;
+}
+
+.music {
+	width: 300px;
+	height: 110px;
+	background-color: #F0F8FF !important;
+
+}
+
+.music p {
+	position: absolute;
+	top: 10px;
+	left: 135px;
+	font-size: 18px;
+	cursor: default;
+	color: darkred;
+}
+
+.music a {
+	position: absolute;
+	top: 80px;
+	left: 135px;
+	text-decoration: none;
+}
+
+.music a:hover {
+	color: #A52A2A;
+}
+
+.music img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+}
